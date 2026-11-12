@@ -41,8 +41,10 @@ Then patch Niagara Launcher and enable **Niagara Button on the left**.
 ## Supported versions
 
 - `1.16.36` — the version the patch was written and verified against.
-- Any other version — offered as experimental, since the layout file has been stable, but the patch
-  fails loudly instead of silently doing nothing if the two button views are not found.
+- Any other version — offered as experimental. The patch copies the button's right-edge reserve from
+  the guideline the app itself declares, so it does not depend on a dimension name that Niagara
+  renamed between releases (`1.16.28` has no `@dimen/alphabet_wave_width`). It fails with a readable
+  `PatchException` instead of silently doing nothing when the two button views are not found.
 
 ## Building locally
 
